@@ -1,0 +1,4 @@
+easygui==0.98.3
+Pillow==9.5.0
+Pillow==10.2.0
+rembg==2.0.56
