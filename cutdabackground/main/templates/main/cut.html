@@ -5,4 +5,11 @@
 {% block content %}
 	<h1>здесь мы готовим!</h1>
 	<p>почти...</p>
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form }}
+		<!-- <input type="file" id="picture_to_cut" name="picture_to_cut" accept="image/png, image/jpeg" /><br> -->
+		<button class = "btn" type="submit">Cut</button>
+		<span>{{ error }}</span>
+	</form>
 {% endblock %}
