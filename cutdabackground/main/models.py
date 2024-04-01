@@ -8,7 +8,7 @@ from django.core.files.base import ContentFile
 
 class ImageCut(models.Model):
 	img = models.ImageField(upload_to="images")
-	out_img = models.ImageField(blank=True, upload_to="images")
+	out_img = models.ImageField(blank=True, upload_to="out_images")
 
 	def __str__(self):
 		return str(self.id)
@@ -18,7 +18,7 @@ class ImageCut(models.Model):
 
 		if self.img and not self.out_img:
 			input_image_path = self.img.path
-			output_image_path = f"{self.img.name.split('/')[-1].split('.')[0]}_out.png"  # Имя файла для выходного изображения
+			output_image_path = f"{self.img.name.split('.')[0]}_out.png"  # Имя файла для выходного изображения
 
 			with open(input_image_path, "rb") as f:
 					image_data = f.read()
@@ -26,8 +26,8 @@ class ImageCut(models.Model):
 			processed_image_data = remove(image_data)
 
 			# Сохранение обработанного изображения
-			with open(output_image_path, "wb") as f:
-					f.write(processed_image_data)
+			# with open(output_image_path, "wb") as f:
+			# 		f.write(processed_image_data)
 
 			self.out_img.save(f"{output_image_path}", ContentFile(processed_image_data), save=False)
 			super().save(*args, **kwargs)
