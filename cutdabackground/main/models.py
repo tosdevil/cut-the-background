@@ -3,12 +3,14 @@ from rembg import remove
 from PIL import Image
 import os
 from django.core.files.base import ContentFile
+from django.contrib.sessions.models import Session
 
 # Create your models here.
 
 class ImageCut(models.Model):
 	img = models.ImageField(upload_to="images")
 	out_img = models.ImageField(blank=True, upload_to="out_images")
+	uploader_session = models.CharField(max_length=60, blank=True)
 
 	def __str__(self):
 		return str(self.id)

@@ -1,0 +1,91 @@
+* {
+	animation: fadeInAnimation ease 1s;
+	margin: 0;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@keyframes fadeInAnimation {
+	0% {
+			opacity: 0;
+	}
+	100% {
+			opacity: 1;
+	}
+}
+
+@keyframes fadeOutAnimation {
+	0% {
+			opacity: 1;
+	}
+	100% {
+			opacity: 0;
+	}
+}
+
+.edit_images
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.single_image
+{
+	margin: 1vw;
+}
+
+.done_image
+{
+	width: 31vw;
+	border: 1px;
+	border: 2px solid #252525;
+	border-radius: 10px;
+	box-shadow: 10px 5px 5px #808080;
+	background-color: white;
+}
+
+.walter
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	
+}
+
+.previeww
+{
+	position: absolute;
+	width: 24vw;
+	border: 1px;
+	border: 2px solid #252525;
+	border-radius: 10px;
+	box-shadow: 10px 5px 5px #808080;
+	background-color: white;
+}
+
+#nobg
+{
+	animation: fadeOutAnimation ease 5s;
+	opacity: 0;
+}
+
+@media screen and (max-width: 1024px)
+{
+	.edit_images
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.done_image
+{
+	width: 70vw;
+}
+
+.previeww
+{
+	width: 70vw;
+}
+
+}

@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Actually cut the background.{% endblock %}
+
+{% block content %}
+	<h1>здесь мы готовим!</h1>
+	<p>разрезал!</p>
+
+	{% if image.uploader_session == request.session.session_key %}
+
+	<div class="edit_images">
+		<div class="single_image">
+			<h4 class="caption">Original:</h4>
+			<img class = 'done_image' src="{{ image.img.url }}" alt="Uploaded Image">
+		</div>
+		<div class="single_image">
+			<h4 class="caption">Result:</h4>
+			<img class = 'done_image' src="{{ image.out_img.url }}" alt="Uploaded Image">
+		</div>
+	</div>
+
+	{% else %}
+  <p>Ой, контент не найден!</p>
+	{% endif %}
+{% endblock %}

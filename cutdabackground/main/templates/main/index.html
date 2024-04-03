@@ -1,8 +1,14 @@
 {% extends 'main/layout.html' %}
+{% load static %}
 
 {% block title %}Cut the background.{% endblock %}
 
 {% block content %}
 	<h1>дайте ему приготовить!</h1>
 	<p>здесь мы отрезаем фон, если вы можете в это поверить</p>
+	<div class="walter">
+		<img src="{% static 'main/img/waltnobg.png' %}" alt="" class = 'previeww'>
+		<img src="{% static 'main/img/justwalt.webp' %}" alt="" class = 'previeww' id="nobg">
+	</div>
+	<a href="{% url 'cut' %}">Cut!</a>
 {% endblock %}
