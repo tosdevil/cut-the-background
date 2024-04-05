@@ -6,7 +6,7 @@
 	<h1>здесь мы готовим!</h1>
 	<p>разрезал!</p>
 
-	{% if image.uploader_session == request.session.session_key %}
+
 
 	<div class="edit_images">
 		<div class="single_image">
@@ -19,7 +19,5 @@
 		</div>
 	</div>
 
-	{% else %}
-  <p>Ой, контент не найден!</p>
-	{% endif %}
+
 {% endblock %}

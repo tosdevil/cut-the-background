@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from rembg import remove
 from PIL import Image
 import os
@@ -11,6 +12,7 @@ class ImageCut(models.Model):
 	img = models.ImageField(upload_to="images")
 	out_img = models.ImageField(blank=True, upload_to="out_images")
 	uploader_session = models.CharField(max_length=60, blank=True)
+	created_at = models.DateTimeField(default=timezone.now)
 
 	def __str__(self):
 		return str(self.id)
