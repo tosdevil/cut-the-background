@@ -1,0 +1,70 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Actually cut the background.{% endblock %}
+
+{% block content %}
+<style>
+.select_page{
+			height: 840px;
+            width: 1000px;
+            display: flex;
+            flex-direction:column;
+            font-size: 30px;
+            margin-left: auto;
+            margin-right: auto;
+			border: 1px black solid;
+			border-radius: 15%;
+			justify-content: space-between;
+	}
+	h1{
+		display: flex;
+		justify-content: center;
+	}
+	p{
+		display: flex;
+		justify-content: center;
+	
+	}
+	button{
+		margin-top: 40px;
+		display: flex;
+		justify-content: center;
+		padding: 10px;
+		border-radius: 15px;
+		margin-left: 45%;
+		margin-right: 45%;
+		font-size: 30px;
+	}
+	.select_photo{
+		display: block;
+		justify-content: center;
+		margin-left: 20%;
+		margin-right: 15%;
+	
+	}
+	form{
+		font-size: 30px;
+	}
+	input{
+		font-size: 30px;
+	}
+	
+</style>
+<div class="select_page">
+	<div class="text_line">
+		<h1>здесь мы готовим!</h1>
+		<p>почти...</p>
+	</div>
+	<div class="select_photo">
+		<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form }}
+		<!-- <input type="file" id="picture_to_cut" name="picture_to_cut" accept="image/png, image/jpeg" /><br> -->
+		<button class = "btn" type="submit">Cut</button>
+	</form>
+	<span>{{ error }}</span>
+	</div>
+	<div></div>
+</div>
+	
+{% endblock %}
