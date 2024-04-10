@@ -1,0 +1,47 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Actually cut the background.{% endblock %}
+
+{% block content %}
+<style>
+	.edit_page{
+			height: 1100px;
+            width: 1500px;
+            display: flex;
+            flex-direction:column;
+            font-size: 30px;
+            margin-left: auto;
+            margin-right: auto;
+			border: 1px black solid;
+			border-radius: 15%;
+			
+	}
+	h1{
+		display: flex;
+		justify-content: center;
+	}
+	p{
+		display: flex;
+		justify-content: center;
+	
+	}
+</style>
+<div class="edit_page">
+	<div class="text_line">
+		<h1>здесь мы готовим!</h1>
+		<p>разрезал!</p>
+	</div>
+	<div class="edit_images">
+		<div class="single_image">
+			<h4 class="caption">Original:</h4>
+			<img class = 'done_image' src="{{ image.img.url }}" alt="Uploaded Image">
+		</div>
+		<div class="single_image">
+			<h4 class="caption">Result:</h4>
+			<img class = 'done_image' src="{{ image.out_img.url }}" alt="Uploaded Image">
+		</div>
+	</div>
+</div>
+	
+	
+{% endblock %}
