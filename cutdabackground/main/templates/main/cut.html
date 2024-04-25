@@ -4,18 +4,7 @@
 
 {% block content %}
 <style>
-.select_page{
-			height: 840px;
-            width: 1000px;
-            display: flex;
-            flex-direction:column;
-            font-size: 30px;
-            margin-left: auto;
-            margin-right: auto;
-			border: 1px black solid;
-			border-radius: 15%;
-			justify-content: space-between;
-	}
+
 	h1{
 		display: flex;
 		justify-content: center;
@@ -35,13 +24,8 @@
 		margin-right: 45%;
 		font-size: 30px;
 	}
-	.select_photo{
-		display: block;
-		justify-content: center;
-		margin-left: 20%;
-		margin-right: 15%;
 	
-	}
+	
 	form{
 		font-size: 30px;
 	}
@@ -56,7 +40,7 @@
 		<p>Загрузите вашу фотографию в ниже:</p>
 	</div>
 	<div class="select_photo">
-		<!-- <img id = 'img' src ='choose.png' height = '150' opacity = '0'> -->
+		<img class = 'img' src ='choose.png' opacity = '0'>
 		<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{ form }}
