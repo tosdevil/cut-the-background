@@ -52,6 +52,11 @@
 	
 }
 
+.shown
+{
+	opacity: 100;
+}
+
 .previeww
 {
 	position: absolute;

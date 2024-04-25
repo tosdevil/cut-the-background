@@ -12,4 +12,14 @@
 	{% block content %}
 	{% endblock %}
 </body>
+<script>
+	let input = document.getElementById('image_upload')
+	let image = document.getElementById('img')
+
+	input.onchange = (e) => {
+		image.classList.add('shown')
+		if (input.files[0])
+		img.src = URL.createObjectURL(input.files[0])
+	}
+</script>
 </html>

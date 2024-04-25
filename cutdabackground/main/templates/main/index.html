@@ -1,14 +1,58 @@
 {% extends 'main/layout.html' %}
 {% load static %}
-
 {% block title %}Cut the background.{% endblock %}
-
 {% block content %}
-	<h1>дайте ему приготовить!</h1>
-	<p>здесь мы отрезаем фон, если вы можете в это поверить</p>
+<style>
+	.start_page	{
+			height: 1040px;
+            width: 1000px;
+            display: flex;
+            flex-direction:column;
+            font-size: 30px;
+            margin-left: auto;
+            margin-right: auto;
+			border: 1px black solid;
+			border-radius: 15%;
+			
+	}
+	h1{
+		display: flex;
+		justify-content: center;
+	}
+	p{
+		display: flex;
+		justify-content: center;
+	
+	}
+	button{
+		margin-top: 700px;
+		display: flex;
+		justify-content: center;
+		padding: 10px;
+		border-radius: 15px;
+		margin-left: 40%;
+		margin-right: 40%;
+		
+	}
+	 a{
+		text-align: center;
+		font-size: 30px;
+		text-decoration: none;
+		color: black;
+	}
+
+</style>
+<div class="start_page">
+	<h1>Cut the background!</h1>
+	<p>здесь вы можете вырезать фон фотографии</p>
 	<div class="walter">
 		<img src="{% static 'main/img/waltnobg.png' %}" alt="" class = 'previeww'>
 		<img src="{% static 'main/img/justwalt.webp' %}" alt="" class = 'previeww' id="nobg">
 	</div>
-	<a href="{% url 'cut' %}">Cut!</a>
+	
+		<button type="submit"><a href="{% url 'cut' %}">Cut!</a></button>
+
+	
+</div>
+	
 {% endblock %}

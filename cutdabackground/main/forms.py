@@ -10,6 +10,7 @@ class ImageForm(ModelForm):
 		widgets = {
 			"img": FileInput(attrs={
 				'class':'image_upload',
+				'id':'image_upload',
 				'placeholder':'Put your image...'
 			})
 		}
